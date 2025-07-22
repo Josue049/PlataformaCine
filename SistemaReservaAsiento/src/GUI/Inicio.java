@@ -144,6 +144,13 @@ public class Inicio extends javax.swing.JFrame {
         this.cartelera.iniciar("cliente");//Enviar la clase a cartelera
         this.cartelera.setPila(pila);
         this.dispose();                  // Luego cerrar la ventana actual
+        
+        Inicio inicio = new Inicio(); 
+        inicio.setEstado(true);// Crear instancia de la nueva ventana
+        inicio.setPila(pila);
+        inicio.setVisible(true);// Mostrar la nueva ventana
+
+        this.dispose();                  // Luego cerrar la ventana actual
     }//GEN-LAST:event_BtnClienteActionPerformed
 
     private void BtnEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEmpleadoActionPerformed
