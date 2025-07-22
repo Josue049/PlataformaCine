@@ -4,6 +4,7 @@ package GUI;
 import Clases.Empleado;
 import Clases.Pago;
 import Clases.Pelicula;
+import Clases.Pilas;
 import Clases.Sala;
 import javax.swing.JOptionPane;
 
@@ -16,6 +17,11 @@ public class RealizarPago_Cliente extends javax.swing.JFrame {
     private final Empleado empleado;
     private final ConfirmacionCompra compraConfirmar;
     String metodoPago = "";
+    private Pilas pila;
+    
+    public void setPila(Pilas pila) {
+        this.pila = pila;
+    }
     
     public RealizarPago_Cliente() {
         initComponents();

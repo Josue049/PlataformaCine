@@ -3,6 +3,7 @@ package GUI;
 
 import Clases.Cliente;
 import Clases.Pelicula;
+import Clases.Pilas;
 import Clases.Sala;
 import javax.swing.JOptionPane;
 
@@ -13,6 +14,11 @@ public class DatosCliente extends javax.swing.JFrame {
     private final Tarifario_Cliente tarifaCliente;
     private final Sala sala;
     private Pelicula pelicula;
+    private Pilas pila;
+    
+    public void setPila(Pilas pila) {
+        this.pila = pila;
+    }
 
     public DatosCliente() {
         initComponents();

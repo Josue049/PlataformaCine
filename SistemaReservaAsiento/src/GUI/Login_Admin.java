@@ -1,13 +1,13 @@
 
 package GUI;
 
-import Clases.Empleado;
+import Clases.Admin;
 import Clases.Pilas;
 import javax.swing.JOptionPane;
 
 
-public class Login_Empleado extends javax.swing.JFrame {
-    private final Empleado empleado;
+public class Login_Admin extends javax.swing.JFrame {
+    private final Admin admin;
     
     private Inicio inicio;
     private String usuario;
@@ -19,10 +19,10 @@ public class Login_Empleado extends javax.swing.JFrame {
         this.pila = pila;
     }
     
-    public Login_Empleado() {
+    public Login_Admin() {
         initComponents();
         this.cartelera = new Cartelera();
-        this.empleado = new Empleado();
+        this.admin = new Admin();
     }
     
     public void inicio(Inicio inicio){
@@ -138,7 +138,7 @@ public class Login_Empleado extends javax.swing.JFrame {
         if( this.usuario.equals("") && this.contraseña.equals("")){
             JOptionPane.showMessageDialog(null, "Por favor, ingresar los datos");
         }else{
-            if(this.usuario.equals(this.empleado.getUsuario()) && this.contraseña.equals(this.empleado.getContraseña())){
+            if(this.usuario.equals(this.admin.getUsuario()) && this.contraseña.equals(this.admin.getContraseña())){
                 JOptionPane.showMessageDialog(null,"Bienvenido "+this.usuario);
                 //Abrir ventana de Cartelera
                 this.setVisible(false);

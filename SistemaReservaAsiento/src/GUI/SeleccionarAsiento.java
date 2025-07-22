@@ -5,6 +5,7 @@ import Clases.Asiento;
 import Clases.Sala;
 import Clases.Pago;
 import Clases.Pelicula;
+import Clases.Pilas;
 import java.awt.Color;
 import javax.swing.JButton;
 
@@ -19,6 +20,11 @@ public class SeleccionarAsiento extends javax.swing.JFrame {
     private Pago pago;
     private Pelicula pelicula;
     private int var;
+    private Pilas pila;
+    
+    public void setPila(Pilas pila) {
+        this.pila = pila;
+    }
 
     public SeleccionarAsiento() {
         initComponents();

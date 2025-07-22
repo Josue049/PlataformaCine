@@ -2,6 +2,7 @@
 package GUI;
 
 import Clases.Pelicula;
+import Clases.Pilas;
 
 
 public class Cartelera extends javax.swing.JFrame {
@@ -9,6 +10,11 @@ public class Cartelera extends javax.swing.JFrame {
     private final Pelicula pelicula;
     private final Tarifario_Empleado tarifaEmpleado;
     private final DatosCliente datosCliente;
+    private Pilas pila;
+    
+    public void setPila(Pilas pila) {
+        this.pila = pila;
+    }
 
    
     public Cartelera() {
@@ -24,7 +30,10 @@ public class Cartelera extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        System.out.println(pila);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,8 +44,10 @@ public class Cartelera extends javax.swing.JFrame {
     
     private void cartelera(Pelicula pelicula){
         if(this.tipo.equals("cliente")){
+            this.datosCliente.setPila(pila);
             this.datosCliente.iniciar(this,pelicula);
         }else if(this.tipo.equals("empleado")){
+            this.datosCliente.setPila(pila);
             this.tarifaEmpleado.iniciar(this,pelicula);
         }
         

@@ -17,6 +17,18 @@ public class Asiento {
         // +1 porque las filas inician en 0
         return String.format("Asiento %d%d%c", this.fila + 1,this.columna+1 ,letra);
     }
+
+    public int getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public char getLetra() {
+        return letra;
+    }
     
     
 
