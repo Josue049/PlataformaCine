@@ -4,12 +4,19 @@
  */
 package GUI;
 
+import Clases.GestionUsuario;
+import Clases.Pilas;
+import Clases.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Equipo
  */
 public class IniciarSesion extends javax.swing.JFrame {
-    
+    private final Cartelera cartelera;
+    Pilas pila;
+    private GestionUsuario gestionUsuario;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(IniciarSesion.class.getName());
 
     /**
@@ -17,7 +24,13 @@ public class IniciarSesion extends javax.swing.JFrame {
      */
     public IniciarSesion() {
         initComponents();
+        this.gestionUsuario = new GestionUsuario();
+        this.cartelera = new Cartelera();
+        this.cartelera.setPila(pila);
     }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,6 +70,11 @@ public class IniciarSesion extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("INICIAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,6 +136,21 @@ public class IniciarSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String nombre = tfNombre.getName();
+        String contrasena = tfContrsena.getText();
+        Usuario usuario = gestionUsuario.iniciarSesion(nombre, contrasena);
+        
+        if (usuario == null) {
+            JOptionPane.showMessageDialog(rootPane, "No se encontro ningun usuario con esas credenciales");
+        }else{
+            this.cartelera.iniciar("cliente");
+            this.cartelera.setPila(pila);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
