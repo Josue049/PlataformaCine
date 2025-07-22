@@ -3,6 +3,7 @@ package GUI;
 
 import Clases.Pago;
 import Clases.Pelicula;
+import Clases.Pilas;
 import Clases.Sala;
 import javax.swing.SpinnerNumberModel;
 
@@ -14,6 +15,11 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
     private final Sala sala;
     private final SpinnerNumberModel spinner_1, spinner_2, spinner_3;
     private final SeleccionarAsiento seleccionarAsiento;
+    private Pilas pila;
+    
+    public void setPila(Pilas pila) {
+        this.pila = pila;
+    }
     
     public Tarifario_Empleado() {
         initComponents();

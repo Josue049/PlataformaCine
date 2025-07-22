@@ -1,7 +1,7 @@
 package Clases;
 
 public class Empleado {
-    private final String usuario = "admin2025";
+    private final String usuario = "empleado2025";
     private final String contraseña = "123456";
     private Pago pago;//Agregacion
 

@@ -2,6 +2,7 @@
 package GUI;
 
 import Clases.Empleado;
+import Clases.Pilas;
 import javax.swing.JOptionPane;
 
 
@@ -12,6 +13,11 @@ public class Login_Empleado extends javax.swing.JFrame {
     private String usuario;
     private String contraseña;
     private final Cartelera cartelera;
+    private Pilas pila;
+    
+    public void setPila(Pilas pila) {
+        this.pila = pila;
+    }
     
     public Login_Empleado() {
         initComponents();

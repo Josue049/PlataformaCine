@@ -2,6 +2,7 @@
 package GUI;
 
 import Clases.Pelicula;
+import Clases.Pilas;
 import Clases.Sala;
 import Reportes.ImprimirPDF;
 import java.text.SimpleDateFormat;
@@ -13,6 +14,11 @@ public class ConfirmacionCompra extends javax.swing.JFrame {
     private Pelicula pelicula;
     private Sala sala;
     private ImprimirPDF imprimir;
+    private Pilas pila;
+    
+    public void setPila(Pilas pila) {
+        this.pila = pila;
+    }
     
     public ConfirmacionCompra() {
         initComponents();
@@ -191,8 +197,11 @@ public class ConfirmacionCompra extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.imprimir.ImprimirBoleta();
-        this.dispose();
-        
+
+        Inicio inicio = new Inicio();    // Crear instancia de la nueva ventana
+        inicio.setVisible(true);         // Mostrar la nueva ventana
+
+        this.dispose();                  // Luego cerrar la ventana actual
     }//GEN-LAST:event_jButton1ActionPerformed
 
    
