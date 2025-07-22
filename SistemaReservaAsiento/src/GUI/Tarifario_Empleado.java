@@ -84,34 +84,45 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(0, 17, 43));
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("TARIFARIO");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("TIPO DE ENTRADA:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Adulto");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("S/15");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cantidad");
 
         cantidadAdulto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Infantil 2 - 8");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("S/12");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Adulto Mayor +60");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("S/12");
 
         cantidadInfantil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -127,8 +138,10 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Selección de horarios");
 
+        opcHorario1.setBackground(new java.awt.Color(255, 204, 102));
         Horarios.add(opcHorario1);
         opcHorario1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opcHorario1.setText("8:00 pm");
@@ -138,6 +151,7 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
             }
         });
 
+        opcHorario2.setBackground(new java.awt.Color(255, 204, 102));
         Horarios.add(opcHorario2);
         opcHorario2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opcHorario2.setText("6:00 pm");
@@ -147,6 +161,7 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
             }
         });
 
+        opcHorario3.setBackground(new java.awt.Color(255, 204, 102));
         Horarios.add(opcHorario3);
         opcHorario3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opcHorario3.setText("4:00 pm");
@@ -198,8 +213,8 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
                                 .addGap(50, 50, 50)
                                 .addComponent(opcHorario3))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(108, 108, 108)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -236,9 +251,9 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
                     .addComponent(opcHorario1)
                     .addComponent(opcHorario2)
                     .addComponent(opcHorario3))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,7 +264,9 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
