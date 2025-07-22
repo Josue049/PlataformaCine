@@ -20,7 +20,7 @@ public class Usuario {
     }
 
     public boolean coincide(String usuario, String contrasena) {
-        return this.apellido.equals(usuario) && this.contrasena.equals(contrasena);
+        return this.nombre.equals(usuario) && this.contrasena.equals(contrasena);
     }
 
     @Override
