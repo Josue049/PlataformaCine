@@ -1,5 +1,6 @@
 package GUI;
 
+import Clases.Cola;
 import Clases.Pago;
 import Clases.Pelicula;
 import Clases.Sala;
@@ -12,6 +13,7 @@ public class Tarifario_Cliente extends javax.swing.JFrame {
     private final SeleccionarAsiento seleccionarAsiento;
     private Pelicula pelicula;
     private Sala sala;
+    private Cola colaClientes = new Cola(10);
 
     public Tarifario_Cliente() {
         initComponents();
@@ -205,21 +207,17 @@ public class Tarifario_Cliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonTarifaCliente(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTarifaCliente
-          // Obtener la cantidad de cada tipo de entrada como enteros
         int cantidadEntradaAdulto = ((Number) this.cantidadAdulto.getValue()).intValue();
         int cantidadEntradaInfantil = ((Number) this.cantidadInfantil.getValue()).intValue(); 
         int cantidadEntradaAdultoMayor = ((Number) this.cantidadAdultoMayor.getValue()).intValue(); 
 
-        // Calcular el número total de entradas seleccionadas
         int totalEntradasSeleccionadas = cantidadEntradaAdulto + cantidadEntradaInfantil + cantidadEntradaAdultoMayor;
 
-        // VALIDACIÓN 1: Asegurar que se haya seleccionado al menos una entrada
         if (totalEntradasSeleccionadas == 0) {
             JOptionPane.showMessageDialog(this, "Debe seleccionar al menos una entrada.", "Selección Requerida", JOptionPane.WARNING_MESSAGE);
             return; 
         }
 
-        // VALIDACIÓN 2: Asegurar que el total de entradas no exceda el máximo de la sala (25) 
         int maxAsientosSala = 25; 
         if (totalEntradasSeleccionadas > maxAsientosSala) {
             JOptionPane.showMessageDialog(this,
@@ -228,20 +226,45 @@ public class Tarifario_Cliente extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
             return; 
         }
+        
+        //Este código simula la espera en un cine: asigna un turno aleatorio (1-10) y muestra cómo atienden a 
+        //cada cliente anterior con mensajes cada 1 segundos. Al final, avisa cuando es tu turno, recreando la experiencia real de hacer fila.
+        int numeroCliente = (int)(Math.random() * 10 + 1);
+        JOptionPane.showMessageDialog(this, "Te tocó el número " + numeroCliente + " en el sorteo. Espera tu turno...");
+        colaClientes.llenarCola();
 
-        // Si las validaciones pasan, continuar con el cálculo de precios y el siguiente paso:
+        try {
+            for (int i = 1; i < numeroCliente; i++) {
+                int atendido = colaClientes.eliminarCliente();
+
+                JOptionPane.showMessageDialog(
+                    this,
+                    "Se atendió al cliente número " + atendido + "...",
+                    "Atendiendo...",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+
+                Thread.sleep(1000);
+            }
+
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+
+        JOptionPane.showMessageDialog(this, "¡Ahora es tu turno, cliente #" + numeroCliente + "!");
+
+        // Cálculo de precios
         double precioAdulto = cantidadEntradaAdulto * 15.0; 
         double precioInfantil = cantidadEntradaInfantil * 12.0;
         double precioAdultoMayor = cantidadEntradaAdultoMayor * 12.0;
-
         double totalAPagar = precioAdulto + precioInfantil + precioAdultoMayor;
 
         Pago pago = new Pago();
         pago.setMonto(totalAPagar);
 
-        // Pasar a la ventana Seleccionar Asiento
+        // Ir a la ventana de selección de asientos
         this.seleccionarAsiento.iniciar(0, pago, this.pelicula, this.sala, totalEntradasSeleccionadas); 
-        this.setVisible(false); // Ocultar esta ventana
+        this.setVisible(false);  
     }//GEN-LAST:event_BotonTarifaCliente
 
 
