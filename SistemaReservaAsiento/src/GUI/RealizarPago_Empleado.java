@@ -185,6 +185,7 @@ public class RealizarPago_Empleado extends javax.swing.JFrame {
             this.pago.setMetodoPago(this.metodoPago);
             this.empleado.setPago(pago);
             this.compraConfirmar.iniciar(this.pelicula, this.sala);
+            this.compraConfirmar.setPila(pila);
             this.setVisible(false);
         }
 

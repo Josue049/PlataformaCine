@@ -322,6 +322,7 @@ public class DatosCliente extends javax.swing.JFrame {
 
             // Ventana Tarifa Cliente
             this.tarifaCliente.iniciar(this.pelicula,this.sala);
+            this.tarifaCliente.setPila(pila);
             this.setVisible(false);
         }
 

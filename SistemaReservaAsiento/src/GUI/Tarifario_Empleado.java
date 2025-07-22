@@ -297,6 +297,7 @@ public class Tarifario_Empleado extends javax.swing.JFrame {
         
         //Ventana Seleccionar Asiento
         this.seleccionarAsiento.iniciar(1,pago,this.pelicula,this.sala, (int) var);//indice empleado:1
+        this.seleccionarAsiento.setPila(pila);
         this.setVisible(false);
     }//GEN-LAST:event_BotonTarifaEmpleado
 

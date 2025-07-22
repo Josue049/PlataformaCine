@@ -269,6 +269,7 @@ public class Tarifario_Cliente extends javax.swing.JFrame {
 
         // Ir a la ventana de selección de asientos
         this.seleccionarAsiento.iniciar(0, pago, this.pelicula, this.sala, totalEntradasSeleccionadas); 
+        this.seleccionarAsiento.setPila(pila);
         this.setVisible(false);  
     }//GEN-LAST:event_BotonTarifaCliente
 

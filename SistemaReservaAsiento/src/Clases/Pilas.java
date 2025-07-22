@@ -6,6 +6,7 @@ package Clases;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -68,24 +69,19 @@ public class Pilas {
 
     // Mostrar pila
     public void mostrarPila() {
-        System.out.println("Contenido de la pila: " + elementos);
+        for (int i = elementos.size() - 1; i >= 0; i--) {
+            System.out.println("| " + elementos.get(i) + " |");
+        }
+        System.out.println(" ----- ");
     }
-
-    // Método de prueba
-    public static void main(String[] args) {
-        Pilas pila = new Pilas();
-
-        pila.agregarNuevo("Josué");
-        pila.agregarNuevo("Luis");
-        pila.agregarNuevo("Ana");
-
-        pila.mostrarPila(); // [Josué, Luis, Ana]
-
-        System.out.println("Primer valor ingresado: " + pila.obtenerPrimerValor()); // Josué
-        System.out.println("Último valor (cima): " + pila.obtenerUltimoValor());   // Ana
-
-        System.out.println("Desapilado: " + pila.desapilar()); // Ana
-
-        pila.mostrarPila(); // [Josué, Luis]
+    
+    public void mostrarPilaEnTextArea(JTextArea jTextArea1) {
+    StringBuilder contenido = new StringBuilder();
+    contenido.append("Contenido de la pila:\n");
+    for (int i = elementos.size() - 1; i >= 0; i--) {
+        contenido.append("| ").append(elementos.get(i)).append(" |\n");
     }
+    contenido.append(" ----- ");
+    jTextArea1.setText(contenido.toString());
+}
 }

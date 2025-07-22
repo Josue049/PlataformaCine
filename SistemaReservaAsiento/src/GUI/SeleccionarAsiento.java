@@ -417,9 +417,11 @@ public class SeleccionarAsiento extends javax.swing.JFrame {
         
         if (this.iduser == 0) {//cliente
             this.pagoCliente.iniciar(this.pago, this.pelicula, this.sala);
+            this.pagoCliente.setPila(pila);
 
         } else if (this.iduser == 1) {//empleado
             this.pagoEmpleado.iniciar(this.pago, this.pelicula, this.sala);
+            this.pagoEmpleado.setPila(pila);
         }
         this.setVisible(false);
 

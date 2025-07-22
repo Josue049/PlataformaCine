@@ -142,6 +142,7 @@ public class Login_Empleado extends javax.swing.JFrame {
                 //Abrir ventana de Cartelera
                 this.setVisible(false);
                 cartelera.iniciar("empleado");//id del empleado
+                cartelera.setPila(pila);
             }else{
                 JOptionPane.showMessageDialog(null,"Usuario y Contraseña incorrecto!!");
                 

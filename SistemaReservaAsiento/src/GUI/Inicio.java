@@ -5,7 +5,12 @@ import Clases.Pilas;
 
 public class Inicio extends javax.swing.JFrame {
     private final Cartelera cartelera;
-    Pilas pila = new Pilas();
+    boolean estado = false;
+    Pilas pila;
+    
+    public void setEstado(boolean nuevo){
+        estado = nuevo;
+    }
     
     public void setPila(Pilas pila) {
         this.pila = pila;
@@ -23,6 +28,10 @@ public class Inicio extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setTitle("Dibujitos Premier");
+        
+        if (estado == false){
+            pila = new Pilas();
+        }
     }
 
    

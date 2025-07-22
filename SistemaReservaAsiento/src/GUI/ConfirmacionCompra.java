@@ -196,9 +196,14 @@ public class ConfirmacionCompra extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.imprimir.ImprimirBoleta();
+        
+        pila.agregarNuevo("Pelicula: "+this.pelicula.getTitulo()+"  -  Se compraron "+String.valueOf(this.sala.getAsientoSeleccionados().length)+" entradas");
+        pila.mostrarPila();
 
-        Inicio inicio = new Inicio();    // Crear instancia de la nueva ventana
-        inicio.setVisible(true);         // Mostrar la nueva ventana
+        Inicio inicio = new Inicio(); 
+        inicio.setEstado(true);// Crear instancia de la nueva ventana
+        inicio.setPila(pila);
+        inicio.setVisible(true);// Mostrar la nueva ventana
 
         this.dispose();                  // Luego cerrar la ventana actual
     }//GEN-LAST:event_jButton1ActionPerformed

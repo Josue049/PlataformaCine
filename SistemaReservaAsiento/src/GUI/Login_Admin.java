@@ -141,7 +141,10 @@ public class Login_Admin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Bienvenido "+this.usuario);
                 //Abrir ventana de Cartelera
                 this.setVisible(false);
-                cartelera.iniciar("empleado");//id del empleado
+                
+                VistaAdmin vistaAdmin = new VistaAdmin();    // Crear instancia de la nueva ventana
+                vistaAdmin.setVisible(true); 
+                vistaAdmin.setPila(pila);
             }else{
                 JOptionPane.showMessageDialog(null,"Usuario y Contraseña incorrecto!!");
                 

@@ -243,6 +243,7 @@ public class RealizarPago_Cliente extends javax.swing.JFrame {
             this.pago.setMetodoPago(this.metodoPago);
             this.empleado.setPago(pago);
             this.compraConfirmar.iniciar(this.pelicula,this.sala);
+            compraConfirmar.setPila(pila);
             this.setVisible(false);
             
         }
